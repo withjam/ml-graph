@@ -1,0 +1,24 @@
+{
+  "name": "ml-vis",
+  "version": "0.0.1",
+  "description": "Visualization library for MarkLogic",
+  "main": "lib/ml-graph-core.js",
+  "scripts": {
+    "start": "node example/server.js"
+  },
+  "keywords": [
+    "visualization",
+    "charts",
+    "graph",
+    "MarkLogic"
+  ],
+  "author": "Matt Pileggi",
+  "license": "Apache 2",
+  "dependencies": {
+    "express": "^4.10.7",
+    "jade": "^1.9.0",
+    "marklogic": "^1.0.0-ea3",
+    "nib": "^1.0.4",
+    "stylus": "^0.49.3"
+  }
+}

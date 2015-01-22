@@ -1,0 +1,41 @@
+html
+  head
+    title ml-vis tester
+    link(rel="stylesheet", href="/css/mlvis.css")
+
+  body
+    header
+      h1 MLVis Demo
+
+    #mlgraph
+
+    script(src='js/three.js')
+    script(src='js/CSS3DRenderer.js')
+    script(src='js/TrackballControls.js')
+    script(src='js/OrbitControls.js')
+    script(src='js/tween.min.js')
+    script(src='lib/ml-graph-core.js')
+    script(src='lib/ml-graph-three.js')
+    script.
+      var graph = new MLGraph(); // create new instance
+      graph.setRenderer( new MLGraphThree() ); // set the renderer we will be using
+
+      // draw some stuff
+      graph.addObject( '/documents/people/abc2.xml', {
+        title: 'Object 1',
+        type: 'person',
+        uri: '/documents/people/abc1.xml',
+        sticky: false
+      });
+
+      graph.addObject( '/documents/people/abc2.xml', {
+        title: 'Object 2',
+        type: 'person',
+        uri: '/documents/people/abc2.xml',
+        sticky: false
+      });
+
+      graph.connect('/documents/people/abc1.xml', '/documents/people/abc2.xml', {
+        label: 'knows of',
+        uri: '/relationship/knows-of.xml'
+      });
